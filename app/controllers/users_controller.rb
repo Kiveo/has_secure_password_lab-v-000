@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(name: params[:name], password: params[:password])
-    session[:user_id] = @user.id
+    @user.id = session[:user_id]
     flash[:notice] = "Successfully signed up!"
     redirect_to '/' #welcome page
   end
