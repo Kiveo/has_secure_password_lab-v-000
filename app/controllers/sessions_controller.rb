@@ -18,17 +18,8 @@ class SessionsController < ApplicationController
       flash[:notice] = "Incorrect Login Info"
       redirect_to '/'
     end
-   end
-# ---------------------------
-# def create
-#     user = User.find_by(name: params[:user][:name])
-#     user = user.try(:authenticate, params[:user][:password])
-#     return redirect_to(controller: 'sessions', action: 'new') unless user
-#     @user = user
-#     session[:user_id] = @user.id
-#     redirect_to '/'
-# end
-# -----------------------
+  end
+
   def delete
     session.delete :user_id
   end
