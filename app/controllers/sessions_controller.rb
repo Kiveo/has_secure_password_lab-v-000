@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to "/" #home page
     else
       flash[:notice] = "Incorrect Login Info"
-      redirect_to new_user_path
+      redirect_to new_session_path
     end
    end
 
