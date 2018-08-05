@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user.create(username: params[:username], password: params[:password])
+    session[:username] = @user.username 
     redirect '/' #welcome page
   end
 
