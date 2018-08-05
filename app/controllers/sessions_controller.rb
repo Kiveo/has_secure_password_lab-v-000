@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to "/users/#{current_user.slug}"
     else
       flash[:notice] = "Incorrect Login Info"
-      redirect_to 'sessions/new'
+      render 'sessions/new'
     end
    end
 
