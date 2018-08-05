@@ -7,11 +7,11 @@ class UsersController < ApplicationController
   def create
     @user = User.create(user_params)
     if @user
-      redirect_to new_user_path
-    else
       session[:user_id] = @user.id
       flash[:notice] = "Successfully signed up!"
-      redirect_to '/' #welcome page
+      redirect_to new_user_path #welcome page
+    else
+      redirect_to new_user_path
     end
   end
 
