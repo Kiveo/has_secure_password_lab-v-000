@@ -1,12 +1,12 @@
 class SessionsController < ApplicationController
 
- def new 
- end 
+ def new
+ end
 
- def create 
- end 
+ def create
+ end
 
- def delete 
+ def delete
    session.delete :user_id
  end
 
