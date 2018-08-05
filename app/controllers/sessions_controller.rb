@@ -19,12 +19,12 @@ class SessionsController < ApplicationController
   #     render 'sessions/new'
   #   end
   #  end
-   def create 
+   def create
    @user = User.find_by(name: params[:name])
     return head(:forbidden) unless @user.authenticate(params[:password])
-    session[:user_id] = @user.id 
-   end 
-   
+    session[:user_id] = @user.id
+   end
+
  def delete
    session.delete :user_id
  end
