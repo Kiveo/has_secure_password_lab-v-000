@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(username: params[:username], password: params[:password])
+    @user = User.create(name: params[:name], password: params[:password])
     flash[:notice] = "Successfully signed up!"
     redirect_to '/' #welcome page
   end
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation)
+    params.require(:user).permit(:name, :password, :password_confirmation)
   end
 
 end
