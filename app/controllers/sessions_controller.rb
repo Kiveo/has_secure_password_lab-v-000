@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to "/" #home page
     else
       flash[:notice] = "Incorrect Login Info"
-      render 'sessions/new'
+      render 'users/new'
     end
    end
 
