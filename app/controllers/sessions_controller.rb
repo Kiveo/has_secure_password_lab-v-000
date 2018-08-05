@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
     @user = User.find_by(username: params[:username])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/users/#{current_user.slug}"
+      redirect_to "/" #home page
     else
       flash[:notice] = "Incorrect Login Info"
       render 'sessions/new'
