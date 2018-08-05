@@ -6,13 +6,13 @@ class UsersController < ApplicationController
 
   def create
     @user = User.create(user_params)
-    if @user 
+    if @user
       session[:user_id] = @user.id
       flash[:notice] = "Successfully signed up!"
       redirect_to '/' #welcome page
-    else 
+    else
       redirect_to new_user_path
-    end 
+    end
   end
 
   private
