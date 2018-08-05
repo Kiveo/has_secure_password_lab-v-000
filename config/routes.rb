@@ -6,6 +6,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users, only: [:new, :create]
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
