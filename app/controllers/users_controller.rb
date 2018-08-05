@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user.create(username: params[:username], password: params[:password])
+    @user.new(username: params[:username], password: params[:password])
+    @user.save 
     flash[:notice] = "Successfully signed up!"
     redirect '/' #welcome page
   end
