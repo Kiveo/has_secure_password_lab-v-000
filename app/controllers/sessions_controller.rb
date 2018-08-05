@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+#login page
  def new
    if !logged_in?
      render 'sessions/new'
@@ -8,16 +8,17 @@ class SessionsController < ApplicationController
    end
  end
 
- get '/login' do
-   if !logged_in?
-     erb :'users/login'
-   else
-     redirect to '/'
+  # Log In action
+  def create
+    @user = User.find_by(username: params[:username])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id
+      redirect_to "/users/#{current_user.slug}"
+    else
+      flash[:notice] = "Incorrect Login Info"
+      redirect_to 'sessions/new'
+    end
    end
- end
-
- def create
- end
 
  def delete
    session.delete :user_id
