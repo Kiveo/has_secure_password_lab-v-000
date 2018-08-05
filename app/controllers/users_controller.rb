@@ -11,7 +11,7 @@ class UsersController < ApplicationController
       flash[:notice] = "Successfully signed up!"
       redirect_to new_user_path #welcome page
     else
-      redirect_to '/'
+      redirect_to welcome_path
     end
   end
 
