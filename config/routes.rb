@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
 
-  get "/logout" => 'sessions#delete'
+  get "/logout" => 'sessions#delete' #will this work?
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
