@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :users
+  resources :sessions
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
